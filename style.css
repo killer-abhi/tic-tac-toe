@@ -9,7 +9,7 @@ body {
     margin: 5rem auto;
     width: 30rem;
     height: 30rem;
-    display: none;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
@@ -86,7 +86,7 @@ body {
   }
   
   .game {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
@@ -177,16 +177,44 @@ body {
   .cell-child {
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-  .cell:hover .x {
-    background: url("./assets/images/icon-x-outline.svg");
+  .cell-child:hover{
+    /* background: url("./assets/images/icon-x-outline.svg"); */
+    /* background-repeat: no-repeat; */
+    /* background-position: center; */
+    cursor: pointer;
+  }
+  .hover-X:hover{
     background-repeat: no-repeat;
     background-position: center;
+    background: url("./assets/images/icon-x-outline.svg");
   }
-  
-  .cell:hover .y {
+  .hover-O:hover{
+    background-repeat: no-repeat;
+    background-position: center;
     background: url("./assets/images/icon-o-outline.svg");
+  }
+  .cell-child:hover{
+    /* background: url("./assets/images/icon-o-outline.svg"); */
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    /* z-index: 1000; */
+  }
+  .clicked-O{
+    background: url("./assets/images/icon-o.svg");
     background-repeat: no-repeat;
     background-position: center;
     z-index: 1000;
   }
+  
+  .clicked-X{
+    background: url("./assets/images/icon-x.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1000;
+  }
+

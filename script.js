@@ -1,10 +1,11 @@
 let Player1Mark = "O";
-let CurrentMark;
-const childCell = document.getElementsByClassName("cell-child");
+let CurrentMark=Player1Mark;
 
-// let Filledcells = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
-let Filledcells = new Array(9);
-Filledcells.fill(-1);
+const childCells = document.getElementsByClassName("cell-child");
+
+let CellsArray = new Array(9);
+CellsArray.fill(-1);
+
 let imgO = document.createElement("img");
 let imgX = document.createElement("img");
 
@@ -18,75 +19,94 @@ hoverO.src = "./assets/images/icon-o-outline.svg";
 hoverX.src = "./assets/images/icon-x-outline.svg";
 
 function handlePlayerMark(selected) {
-  if (selected === 0) {
-    Player1Mark = "O";
-  } else {
-    Player1Mark = "X";
-  }
-  let previousSelected;
-  if (selected === 0) {
-    previousSelected = document.getElementsByClassName("mark")[1];
-  } else {
-    previousSelected = document.getElementsByClassName("mark")[0];
-  }
-  previousSelected.classList.remove("mark-active");
-  let selectedMark = document.getElementsByClassName("mark")[selected];
-  selectedMark.classList.add("mark-active");
+    if (selected === 0) {
+        Player1Mark = "O";
+    } else {
+        Player1Mark = "X";
+    }
+    let previousSelected;
+    if (selected === 0) {
+        previousSelected = document.getElementsByClassName("mark")[1];
+    } else {
+        previousSelected = document.getElementsByClassName("mark")[0];
+    }
+    previousSelected.classList.remove("mark-active");
+    let selectedMark = document.getElementsByClassName("mark")[selected];
+    selectedMark.classList.add("mark-active");
 }
+
 function handleGame(type) {
-  CurrentMark = Player1Mark;
-  document.getElementById("img-Mark").innerHTML = imgO;
-  document.getElementsByClassName("start-game")[0].style.display = "none";
-  document.getElementsByClassName("game")[0].style.display = "flex";
+    CurrentMark = Player1Mark;
+    document.getElementById("img-Mark").classList.toggle("turn-"+CurrentMark);
+
+    document.getElementsByClassName("start-game")[0].style.display = "none";
+    document.getElementsByClassName("game")[0].style.display = "flex";
+    
+    addHoverEffect();
+}
+
+function addHoverEffect(){
+    
+    for(var i=0;i<9;i++){
+        if(CellsArray[i]===-1){
+            if (CurrentMark == "O") {
+                childCells[i].classList.remove("hover-X");
+            } else {
+                childCells[i].classList.remove("hover-O");
+            }
+            childCells[i].classList.add("hover-"+CurrentMark);
+        }
+    }
+}
+function removeHoverEffect(index) {
+    childCells[index].classList.remove("hover-X");
+    childCells[index].classList.remove("hover-O");
 }
 
 function changePlayer() {
-  //   console.log(childCell);
-  console.log(CurrentMark);
-  if (CurrentMark == "O") {
-    // document.getElementById("img-Mark").classList.remove("turn-O");
-    childCell[0].classList.toggle("y");
-    CurrentMark = "X";
-    // document.getElementById("img-Mark").classList.add("turn-X");
-  } else {
-    // document.getElementById("img-Mark").classList.remove("turn-X");
-    CurrentMark = "O";
-    // document.getElementById("img-Mark").classList.add("turn-O");
-    childCell[0].classList.toggle("y");
-  }
-}
-function handleClick(index) {
-  if (CurrentMark === "O") {
-    Filledcells[index] = 0;
-    document.getElementsByClassName("cell")[index].appendChild(imgO);
-  } else {
-    Filledcells[index] = 1;
-    document.getElementsByClassName("cell")[index].appendChild(imgX);
-  }
-  changePlayer();
-}
-function checkHover(index) {
-  for (var i = 0; i < Filledcells.length; i++) {
-    if (Filledcells[index] === -1) {
-      return 1;
+    document.getElementById("img-Mark").classList.remove("turn-"+CurrentMark);
+    if (CurrentMark == "O") {
+        CurrentMark = "X";
     } else {
-      return 0;
+        CurrentMark = "O";
     }
-  }
+    document.getElementById("img-Mark").classList.add("turn-"+CurrentMark);
+    addHoverEffect();
 }
 
-function handleHover(index) {
-  if (checkHover(index)) {
-    let hoveredCell = document.getElementsByClassName("cell")[index];
-    hoveredCell.style.cursor = "pointer";
-    if (CurrentMark === "O") {
-      console.log(document.getElementsByClassName("x")[0]);
-    } else {
-      hoveredCell.appendChild(hoverX);
+
+function AlreadyFilled(index){
+    if(CellsArray[index]!==-1){
+        return(1);
     }
-    hoveredCell.addEventListener("click", function () {
-      handleClick(index);
-      console.log("clicked");
-    });
-  }
+    else{
+        return(0);
+    }
+}
+
+function handleClick(index) {
+    console.log(CurrentMark);
+    if (!AlreadyFilled(index)) {
+        removeHoverEffect(index);
+        if (CurrentMark === "O") {
+            CellsArray[index] = 0;
+            // document.getElementsByClassName("cell-child")[index].classList.remove("x");
+            document.getElementsByClassName("cell-child")[index].classList.toggle("clicked-O");
+        } else {
+            CellsArray[index] = 1;
+            // document.getElementsByClassName("cell-child")[index].classList.remove("o");
+            document.getElementsByClassName("cell-child")[index].classList.toggle("clicked-X");
+        }
+        // checkRoundResult();
+        changePlayer();
+    }
+}
+
+function checkRoundResult(){
+    const arr=[3][3];
+    for(var i=0;i<3;i++){
+        for(var j=0;j<3;j++){
+            arr[i][j]=CellsArray[i+j];
+        }
+    }
 }

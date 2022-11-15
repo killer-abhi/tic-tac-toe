@@ -35,7 +35,7 @@
 					NEW GAME ( vs CPU )
 				</button>
 				<button class="btn" id="multiplayer-game" onclick="{handleGame(1)}">
-					MULTIPLAYER
+					MULTIPLAYER ( PvP )
 				</button>
 			</div>
 		</div>
@@ -46,7 +46,7 @@
 					<span id="img-Mark"></span>
 					&nbsp; TURN
 				</p>
-				<button id="restart">
+				<button id="restart" onclick="{handleRestart()}">
 					<img src="./assets/images/icon-restart.svg" alt="" srcset="" />
 				</button>
 			</div>
@@ -79,7 +79,42 @@
 					<div class="cell-child" onclick="{handleClick(8)}">8</div>
 				</div>
 			</div>
-			<div class="score">here is score</div>
+			<div class="score-card">
+				<div class="score-div" id="player1-score" >
+					<div id="PlayerXName"></div>
+					<div id="scoreX" class="score">0</div>
+				</div>
+				<div class="score-div" id="tie-rounds">
+					<div id="ties">TIES</div>
+					<div id="tie-count" class="score">0</div>
+				</div>
+				<div class="score-div" id="player2-score">
+					<div id="PlayerOName"></div>
+					<div id="scoreO" class="score">0</div>
+				</div>
+			</div>
+		</div>
+		<div class="overlay">
+			<div class="win-card">
+				<div id="player-won"></div>
+				<div id="win-title">
+					<div id="win-mark"></div>&nbsp;
+					<div>TAKES THE ROUND</div>
+				</div>
+				<div id="nav">
+					<a href="./index.html"><button id="quit" class="btn-nav">Quit</button></a>
+					
+					<button id="next-round" class="btn-nav" onclick="{handleRestart(1)}">Next Round</button>
+				</div>
+			</div>
+			<div class="tie-banner">
+				HERE GOES A TIE !!!!
+				<div id="nav">
+					<a href="./index.html"><button id="quit" class="btn-nav">Quit</button></a>
+					
+					<button id="next-round" class="btn-nav" onclick="{handleRestart(1)}">Next Round</button>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>

@@ -1,171 +1,175 @@
 body {
-    top: 0;
-    left: 0;
-    padding: 0;
-    margin: 0;
-    background-color: rgb(27, 34, 34);
-  }
-  .start-game {
-    margin: 5rem auto;
-    width: 30rem;
-    height: 30rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-  }
-  .player {
-    color: gray;
-    background-color: rgb(40, 39, 39);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 12rem;
-    width: 90%;
-    border-radius: 1rem;
-  }
-  .player #select-mark {
-    display: flex;
-    align-items: center;
-    background-color: rgb(27, 34, 34);
-    justify-content: center;
-    width: 90%;
-    height: 3.5rem;
-    border-radius: 0.5rem;
-  }
-  .mark {
-    width: 48%;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    background-color: transparent;
-  }
-  .mark:hover {
-    background-color: gray;
-    border-radius: 0.5rem;
-    cursor: pointer;
-  }
-  .mark-active {
-    background-color: gray;
-    border-radius: 0.5rem;
-  }
-  .mark img {
-    height: 2rem;
-  }
-  .game-type {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 90%;
-    height: 10rem;
-  }
-  .btn {
-    width: 100%;
-    height: 4rem;
-    border-radius: 1rem;
-    font-size: 1.3rem;
-    color: rgb(21, 4, 21);
-  }
-  #solo-game {
-    background-color: yellow;
-    box-shadow: inset 0px -5px 0px 0px rgb(109, 123, 29);
-  }
-  #multiplayer-game {
-    background-color: rgb(56, 129, 105);
-    box-shadow: inset 0px -5px 0px 0px rgb(29, 70, 45);
-  }
-  #solo-game:hover,
-  #multiplayer-game:hover {
-    background-color: gray;
-    box-shadow: none;
-    cursor: pointer;
-  }
-  
-  .game {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    height: 30rem;
-    width: 30rem;
-    margin: 5rem auto;
-  }
-  .header {
-    justify-content: center;
-    align-items: center;
-    display: grid;
-    grid-template-columns: repeat(3, 7rem);
-    width: 90%;
-    column-gap: 1rem;
-  }
-  .header #logo {
-    width: 7rem;
-  }
-  .header #turn {
-    color: gray;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    height: 3rem;
-    width: 7rem;
-    /* background-color: antiquewhite */
-  }
-  .header #restart {
-    height: 3rem;
-    width: 7rem;
-    border-radius: 0.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: antiquewhite;
-  }
-  
-  .card {
-    display: grid;
-    grid-template-columns: repeat(3, 7rem);
-    column-gap: 1rem;
-    row-gap: 1rem;
-    background-color: transparent;
-  }
-  .cell {
-    height: 7rem;
-    border-radius: 1rem;
-    background-color: grey;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-  }
-  /* .cell:hover{
+	top: 0;
+	left: 0;
+	padding: 0;
+	margin: 0;
+	background-color: rgb(27, 34, 34);
+}
+.start-game {
+	margin: 5rem auto;
+	width: 30rem;
+	height: 30rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+.player {
+	color: gray;
+	background-color: rgb(40, 39, 39);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 12rem;
+	width: 90%;
+	border-radius: 1rem;
+}
+.player #select-mark {
+	display: flex;
+	align-items: center;
+	background-color: rgb(27, 34, 34);
+	justify-content: center;
+	width: 90%;
+	height: 3.5rem;
+	border-radius: 0.5rem;
+}
+.mark {
+	width: 48%;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	background-color: transparent;
+}
+.mark:hover {
+	background-color: gray;
+	border-radius: 0.5rem;
+	cursor: pointer;
+}
+.mark-active {
+	background-color: gray;
+	border-radius: 0.5rem;
+}
+.mark img {
+	height: 2rem;
+}
+.game-type {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	width: 90%;
+	height: 10rem;
+}
+.btn {
+	width: 100%;
+	height: 4rem;
+	border-radius: 1rem;
+	font-size: 1.3rem;
+	color: rgb(21, 4, 21);
+}
+#solo-game {
+	background-color: yellow;
+	box-shadow: inset 0px -5px 0px 0px rgb(109, 123, 29);
+}
+#multiplayer-game {
+	background-color: rgb(56, 129, 105);
+	box-shadow: inset 0px -5px 0px 0px rgb(29, 70, 45);
+}
+#solo-game:hover,
+#multiplayer-game:hover {
+	background-color: gray;
+	box-shadow: none;
+	cursor: pointer;
+}
+
+.game {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	height: 30rem;
+	width: 30rem;
+	margin: 5rem auto;
+}
+.header {
+	justify-content: center;
+	align-items: center;
+	display: grid;
+	grid-template-columns: repeat(3, 7rem);
+	width: 90%;
+	column-gap: 1rem;
+}
+.header #logo {
+	width: 7rem;
+}
+.header #turn {
+	color: gray;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	height: 3rem;
+	width: 7rem;
+	/* background-color: antiquewhite */
+}
+.header #restart {
+	height: 3rem;
+	width: 7rem;
+	border-radius: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: antiquewhite;
+}
+#restart:hover {
+	background-color: rgb(189, 82, 107);
+	/* filter: brightness(200%); */
+	cursor: pointer;
+}
+.card {
+	display: grid;
+	grid-template-columns: repeat(3, 7rem);
+	column-gap: 1rem;
+	row-gap: 1rem;
+	background-color: transparent;
+}
+.cell {
+	height: 7rem;
+	border-radius: 1rem;
+	background-color: grey;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+/* .cell:hover{
       background: url("./assets/images/icon-o-outline.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 5rem 5rem;
       cursor:pointer;
   } */
-  #img-Mark {
-    height: 30px;
-    width: 30px;
-  }
-  .turn-O {
-    background: url("./assets/images/icon-o.svg");
-    background-size: 30px 30px;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .turn-X {
-    background: url("./assets/images/icon-x.svg");
-    background-size: 30px 30px;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  /* .x, .y{
+#img-Mark {
+	height: 30px;
+	width: 30px;
+}
+.turn-O {
+	background: url("./assets/images/icon-o.svg");
+	background-size: 30px 30px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.turn-X {
+	background: url("./assets/images/icon-x.svg");
+	background-size: 30px 30px;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* .x, .y{
       z-index: -1;
       display: none;
   }
@@ -174,47 +178,138 @@ body {
       display: initial;
       cursor: pointer;
   } */
-  .cell-child {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .cell-child:hover{
-    /* background: url("./assets/images/icon-x-outline.svg"); */
-    /* background-repeat: no-repeat; */
-    /* background-position: center; */
-    cursor: pointer;
-  }
-  .hover-X:hover{
-    background-repeat: no-repeat;
-    background-position: center;
-    background: url("./assets/images/icon-x-outline.svg");
-  }
-  .hover-O:hover{
-    background-repeat: no-repeat;
-    background-position: center;
-    background: url("./assets/images/icon-o-outline.svg");
-  }
-  .cell-child:hover{
-    /* background: url("./assets/images/icon-o-outline.svg"); */
-    background-repeat: no-repeat;
-    background-position: center;
-    cursor: pointer;
-    /* z-index: 1000; */
-  }
-  .clicked-O{
-    background: url("./assets/images/icon-o.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 1000;
-  }
-  
-  .clicked-X{
-    background: url("./assets/images/icon-x.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    z-index: 1000;
-  }
+.cell-child {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.cell-child:hover {
+	/* background: url("./assets/images/icon-x-outline.svg"); */
+	/* background-repeat: no-repeat; */
+	/* background-position: center; */
+	cursor: pointer;
+}
+.hover-X:hover {
+	background-repeat: no-repeat;
+	background-position: center;
+	background: url("./assets/images/icon-x-outline.svg");
+}
+.hover-O:hover {
+	background-repeat: no-repeat;
+	background-position: center;
+	background: url("./assets/images/icon-o-outline.svg");
+}
+.cell-child:hover {
+	/* background: url("./assets/images/icon-o-outline.svg"); */
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+	/* z-index: 1000; */
+}
+.clicked-O {
+	background: url("./assets/images/icon-o.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 1;
+}
 
+.clicked-X {
+	background: url("./assets/images/icon-x.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 1;
+}
+
+.score-card{
+  margin-top: 2rem;
+  display: grid;
+	grid-template-columns: repeat(3, 7rem);
+	column-gap: 1rem;
+	row-gap: 1rem;
+}
+.score-div {
+	height: 4rem;
+	border-radius: 1rem;
+
+	display: flex;
+  flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+#player1-score{
+  background-color: aqua;
+}
+#tie-rounds{
+  background-color: rgb(199, 239, 247);
+}
+#player2-score{
+  background-color: orange;
+}
+.score{
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.overlay {
+	height: 15rem;
+	width: 100%;
+	background-color: rgb(83, 103, 96);
+	position: absolute;
+	top: 30%;
+	z-index: 1;
+	opacity: 1;
+	display: none;
+	align-items: center;
+	justify-content: center;
+}
+.win-card {
+	height: 15rem;
+	width: 50%;
+	display: none;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+#player-won {
+	font-size: 1.5rem;
+}
+#win-mark {
+	height: 5rem;
+	width: 5rem;
+}
+#win-title {
+	font-size: 2rem;
+	color: aqua;
+	display: flex;
+	align-items: center;
+}
+.btn-nav {
+	height: 3rem;
+	font-size: 1.3rem;
+	border: none;
+	border-radius: 0.3rem;
+}
+.btn-nav:hover {
+	cursor: pointer;
+	background-color: bisque;
+}
+#quit {
+	width: 5rem;
+	background-color: aliceblue;
+}
+#next-round {
+	width: 8rem;
+	background-color: rgb(229, 229, 10);
+}
+.tie-banner{
+  height: 8rem;
+  font-size: 2rem;
+  color: aqua;
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}

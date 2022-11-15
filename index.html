@@ -8,6 +8,13 @@
 		<link rel="shortcut icon" href="assets/images/logo.svg" type="image/x-icon" />
 		<link rel="stylesheet" href="style.css" />
 		<script src="script.js" defer></script>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Bellefair&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
 		<div class="start-game">
@@ -15,8 +22,8 @@
 				<img src="./assets/images/logo.svg" alt="" srcset="" />
 			</div>
 			<div class="player">
-				<p id="note">PICK PLAYER 1's MARK</p>
-				<p id="select-mark">
+				<div id="note">PICK PLAYER 1's MARK</div>
+				<div id="select-mark">
 					<button
 						class="mark mark-active"
 						id="o-mark"
@@ -27,8 +34,8 @@
 					<button class="mark" id="cross-mark" onclick="{handlePlayerMark(1)}">
 						<img src="./assets/images/icon-x.svg" alt="" srcset="" />
 					</button>
-				</p>
-				<p id="note">REMEMBER X- GOES FIRST</p>
+				</div>
+				<div id="note">REMEMBER X- GOES FIRST</div>
 			</div>
 			<div class="game-type">
 				<button class="btn" id="solo-game" onclick="{handleGame(0)}">
@@ -52,44 +59,44 @@
 			</div>
 			<div class="card">
 				<div class="cell">
-					<div class="cell-child" onclick="{handleClick(0)}">0</div>
+					<div class="cell-child" onclick="{handleClick(0)}"></div>
 				</div>
 				<div class="cell">
-					<div class="cell-child" onclick="{handleClick(1)}">1</div>
+					<div class="cell-child" onclick="{handleClick(1)}"></div>
 				</div>
 				<div class="cell">
-					<div class="cell-child" onclick="{handleClick(2)}">2</div>
+					<div class="cell-child" onclick="{handleClick(2)}"></div>
 				</div>
 				<div class="cell">
-					<div class="cell-child" onclick="{handleClick(3)}">3</div>
+					<div class="cell-child" onclick="{handleClick(3)}"></div>
 				</div>
 				<div class="cell">
-					<div class="cell-child" onclick="{handleClick(4)}">4</div>
+					<div class="cell-child" onclick="{handleClick(4)}"></div>
 				</div>
 				<div class="cell">
-					<div class="cell-child" onclick="{handleClick(5)}">5</div>
+					<div class="cell-child" onclick="{handleClick(5)}"></div>
 				</div>
 				<div class="cell">
-					<div class="cell-child" onclick="{handleClick(6)}">6</div>
+					<div class="cell-child" onclick="{handleClick(6)}"></div>
 				</div>
 				<div class="cell">
-					<div class="cell-child" onclick="{handleClick(7)}">7</div>
+					<div class="cell-child" onclick="{handleClick(7)}"></div>
 				</div>
 				<div class="cell">
-					<div class="cell-child" onclick="{handleClick(8)}">8</div>
+					<div class="cell-child" onclick="{handleClick(8)}"></div>
 				</div>
 			</div>
 			<div class="score-card">
-				<div class="score-div" id="player1-score" >
-					<div id="PlayerXName"></div>
+				<div class="score-div" id="player1-score">
+					<div id="PlayerXName" class="score-title"></div>
 					<div id="scoreX" class="score">0</div>
 				</div>
 				<div class="score-div" id="tie-rounds">
-					<div id="ties">TIES</div>
+					<div id="ties" class="score-title">TIES</div>
 					<div id="tie-count" class="score">0</div>
 				</div>
 				<div class="score-div" id="player2-score">
-					<div id="PlayerOName"></div>
+					<div id="PlayerOName" class="score-title"></div>
 					<div id="scoreO" class="score">0</div>
 				</div>
 			</div>
@@ -98,21 +105,26 @@
 			<div class="win-card">
 				<div id="player-won"></div>
 				<div id="win-title">
-					<div id="win-mark"></div>&nbsp;
+					<div id="win-mark"></div>
+					&nbsp;
 					<div>TAKES THE ROUND</div>
 				</div>
 				<div id="nav">
 					<a href="./index.html"><button id="quit" class="btn-nav">Quit</button></a>
-					
-					<button id="next-round" class="btn-nav" onclick="{handleRestart(1)}">Next Round</button>
+
+					<button id="next-round" class="btn-nav" onclick="{handleRestart(1)}">
+						Next Round
+					</button>
 				</div>
 			</div>
 			<div class="tie-banner">
 				HERE GOES A TIE !!!!
 				<div id="nav">
 					<a href="./index.html"><button id="quit" class="btn-nav">Quit</button></a>
-					
-					<button id="next-round" class="btn-nav" onclick="{handleRestart(1)}">Next Round</button>
+
+					<button id="next-round" class="btn-nav" onclick="{handleRestart(1)}">
+						Next Round
+					</button>
 				</div>
 			</div>
 		</div>

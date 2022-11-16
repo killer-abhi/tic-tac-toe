@@ -181,7 +181,10 @@ function handleClick(index) {
             document.getElementsByClassName("cell-child")[index].classList.toggle("clicked-X");
         }
         clicks++;
-        checkRoundResult();
+        var delayInMilliseconds = 200;
+        setTimeout(function () {
+            checkRoundResult();
+        }, delayInMilliseconds);
     }
 }
 

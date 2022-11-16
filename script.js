@@ -187,7 +187,7 @@ function handleClick(index) {
 
 function checkRoundResult() {
 
-    let isAnyWon=false;
+    let isWon = 0;
     let winArrays = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
     xCells = xCells.sort();
     oCells = oCells.sort();
@@ -213,25 +213,25 @@ function checkRoundResult() {
             scoreX++;
             document.getElementById("scoreX").innerHTML = scoreX;
             winnerOverLay("X");
-            isAnyWon=true;
+            isWon = 1;
         }
         else if (count2 === 3) {
             scoreO++;
             document.getElementById("scoreO").innerHTML = scoreO;
             winnerOverLay("O");
-            isAnyWon=true;
-        }
-        else{
-            isAnyWon=false;
+            isWon = 1;
         }
     }
-    if (clicks === 9 && !isAnyWon) {
-        var delayInMilliseconds=200;
-        setTimeout(function () {
-            handleTie();
-        }, delayInMilliseconds);
+    if (isWon===0) {
+
+        if (clicks===9) {
+            var delayInMilliseconds = 200;
+            setTimeout(function () {
+                handleTie();
+            }, delayInMilliseconds);
+        }
+        changePlayer();
     }
-    changePlayer();
 }
 
 function handleTie() {
